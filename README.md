@@ -54,7 +54,19 @@ your container is now created , we start the container using the command
 ```
 docker start zed2-docker
 ```
-To be continued ...
+### Setting up ZED2i camera
+Run the following command to start the ZED2i camera ,ROS is already a part of the docker container therefore no need to set it up specifically.
+```
+docker exec -it zed2-docker /ros_entrypoint.sh roslaunch zed_wrapper zed2i.launch
+```
+You can check the zed2i camera feed using Rviz,run the following command on your host terminal
+```
+rviz
+```
+Now we open an interactive terminal on the container environment using the following command(run the command on the host terminal)
+```
+docker exec -it zed2-docker bash
+```
 
 
 
