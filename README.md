@@ -67,6 +67,49 @@ Now we open an interactive terminal on the container environment using the follo
 ```
 docker exec -it zed2-docker bash
 ```
+## Tensorflow setup 
+We now install the required tensorflow version inside the container using 
+```
+pip install tensorflow
+```
+incase you have to downgrade tensorflow
+```
+pip install tensorflow==<your required version>
+```
+Now we create a directory to store our scripts and run them
+```
+cd src
+mkdir scripts
+cd scripts
+gedit arrow_detection.py
+```
+We add the code to this .py file ,and its dependencies are to be saved inside the same directory,you can copy them into your container using the docker command
+```
+docker cp src_path container:dest_path
+```
+#### Where:
+- src_path is the path on your local machine of the file you want to copy.<br>
+- container is the name or the ID of the container you want to copy files to.<br>
+- dest_path is the path in the container of the directory you want to copy files to.<br>
+Now we can run using the command
+```
+python3 arrow_detection.py
+```
+## CuDNN installation 
+Incase your CuDNN version is out of date we can install the required version from https://developer.nvidia.com/rdp/cudnn-archive <br>
+We then copy the downloaded tar file into the container using the docker cp command and then follow the installation steps on https://docs.nvidia.com/deeplearning/cudnn/install-guide/index.html#installlinux-tar <br>
+##Additional
+- Nvidia-Daemon - https://www.ibm.com/docs/en/mas-cd/maximo-vi/continuous-delivery?topic=planning-installing-docker-nvidia-docker2 <br>
+- SteroLabs ZED2i manual setup - https://www.stereolabs.com/docs/docker/install-guide-linux#setting-up-docker
+-Docker restart commands
+```
+    sudo systemctl daemon-reload
+    sudo systemctl restart docker
+```
+
+
+
+
 
 
 
