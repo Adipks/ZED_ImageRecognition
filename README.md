@@ -107,6 +107,16 @@ We then copy the downloaded tar file into the container using the docker cp comm
     sudo systemctl restart docker
 ```
 Check the Classification_using_efficientNetB for code.
+# Direct Image pull
+you can directly install from the following image<br>
+https://hub.docker.com/repository/docker/adithya0517/image_classifier/general
+<br>
+pull command
+```
+docker pull adithya0517/image_classifier:latest
+```
+## Additional
+https://www.digitalocean.com/community/tutorials/how-to-share-data-between-docker-containers<br>
 
 
 
