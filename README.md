@@ -7,7 +7,9 @@ follow the link to set up DockerEngine on your system
 https://docs.docker.com/engine/install/ubuntu/
 <br>
 after installing docker , we now create an docker image from which we will create a container <br>
-to learn more about docker images and containers follow https://docs.docker.com/get-started/ <br>
+As this container uses the GPU present in your system you need to have the nvidia container toolkit installed 
+<br>https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html before creating the container.<br>
+To learn more about docker images and containers follow https://docs.docker.com/get-started/ <br>
 ## ZED2i docker container setup
 ### pulling ZED2i docker image
 run the following command <br>
